@@ -160,7 +160,7 @@ This tool will let you RNG abuse pickup items in PtHGSS games
     <td><img src="https://github.com/pokeapi/sprites/blob/master/sprites/items/leftovers.png" title="Leftovers"></td>
   </tr>
   <tr align="center">
-    <td>Slots</td>
+    <td>Slot</td>
     <td>1</td>
     <td>2</td>
     <td>3</td>
