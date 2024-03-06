@@ -96,8 +96,8 @@ short getMaxSlotInput() {
     return slot;
 }
 
-void getInfInfiniteResearchFlag(bool &infinite) {
-    infinite = sanitizeYesNoInput("\nInfinite research? (y/n) ");
+bool getInfInfiniteResearchFlag() {
+    return sanitizeYesNoInput("\nInfinite research? (y/n) ");
 }
 
 uint32_t LCRNG(uint32_t seed) {
@@ -121,20 +121,9 @@ short isWantedItemCheck(uint32_t &seed, short item, short minSlot) {
     static constexpr array<short, 11> pickupThresholds{ 0, 30, 40, 50, 60, 70, 80, 90, 94, 98, 99 };
     short pickupValue = (seed >> 16) % 100;
 
-    if (!item) {
-        for (short i = 1; i <= 11; i++) {
-            if (i > 9) {
-                if (pickupValue == pickupThresholds[10 - (11 - i)]) {
-                    return 11 - (11 - i);
-                }
-
-                continue;
-            }
-
-            if (pickupValue >= pickupThresholds[i - 1] && pickupValue < pickupThresholds[i]) {
-                return i;
-            }
-        }
+    if (!item) { // Search the slot of the random item
+        minSlot = 1;
+        item = 11;
     }
 
     for (short i = minSlot ? minSlot : item; i <= item; i++) {
@@ -207,11 +196,10 @@ int main() {
     unsigned long currentAdvances, advances;
 
     while (true) {
-        bool infiniteResearchFlag = false;
         getPickupsNumberInput(pickupsNumber);
         getLeadMoveRateInput(leadMoveRate);
-        static array<short, 6> pickupItemIndexes{ 0, 0, 0, 0, 0, 0 };
-        static array<short, 6> pickupMinItemIndexes{ 0, 0, 0, 0, 0, 0 };
+        array<short, 6> pickupItemIndexes{ 0, 0, 0, 0, 0, 0 };
+        array<short, 6> pickupMinItemIndexes{ 0, 0, 0, 0, 0, 0 };
         static array<string_view, 4> suffixes { "st", "nd", "rd", "th" };
 
         for (short i = 0; i < pickupsNumber; i++) {
@@ -228,8 +216,7 @@ int main() {
             }
         }
 
-        getInfInfiniteResearchFlag(infiniteResearchFlag);
-        findPickupSeed(infiniteResearchFlag, pickupsNumber, leadMoveRate, pickupItemIndexes, pickupMinItemIndexes);
+        findPickupSeed(getInfInfiniteResearchFlag(), pickupsNumber, leadMoveRate, pickupItemIndexes, pickupMinItemIndexes);
     }
 
     return 0;
