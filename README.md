@@ -4,7 +4,7 @@ This tool will let you RNG abuse pickup items in PtHGSS games
 <table>
   <tr align="center">
     <td>
-      Level
+      Pickup level
     </td>
     <td>
       30%
