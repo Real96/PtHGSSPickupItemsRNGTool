@@ -125,7 +125,7 @@ short isWantedItemCheck(uint32_t &seed, short item, short minSlot) {
         for (short i = 1; i <= 11; i++) {
             if (i > 9) {
                 if (pickupValue == pickupThresholds[10 - (11 - i)]) {
-                    return 10 - (11 - i);
+                    return 11 - (11 - i);
                 }
 
                 continue;
@@ -140,10 +140,10 @@ short isWantedItemCheck(uint32_t &seed, short item, short minSlot) {
     for (short i = minSlot ? minSlot : item; i <= item; i++) {
         if (i > 9) {
             if (pickupValue == pickupThresholds[10 - (11 - i)]) {
-                return 10 - (11 - i);
+                return 11 - (11 - i);
             }
 
-            return 0;
+            continue;
         }
 
         if (pickupValue >= pickupThresholds[i - 1] && pickupValue < pickupThresholds[i]) {
