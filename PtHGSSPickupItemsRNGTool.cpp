@@ -3,6 +3,7 @@
 #include <string_view>
 #include <regex>
 #include <math.h>
+#include <span>
 
 using namespace std;
 
@@ -43,29 +44,56 @@ void getLeadMoveRateInput(short &moveRate) {
 
 void getPickupLevelInput(short &level) {
     sanitizeInput<short>("Insert the level of the Pickup Pokemon: ", level, 1, 100);
+}
+
+short sanitizeGameVersionInput() {
+    short gameVersion;
+    sanitizeInput<short>("Pt (1) or HGSS (2)? ", gameVersion, 1, 2);
     cout << "\n\n";
+
+    return gameVersion == 2 ? 3 : 1;
 }
 
 void printItemsNames(const short level) {
-    static constexpr array<string_view, 18> pickupNormalTable{ "Potion", "Antidote", "Super Potion", "Great Ball",
-                                                               "Repel", "Escape Rope", "Full Heal", "Hyper Potion",
-                                                               "Ultra Ball", "Revive", "Rare Candy", "Sun Stone",
-                                                               "Moon Stone", "Heart Scale", "Full Restore",
-                                                               "Max Revive", "PP Up", "Max Elixir" };
+    const short gameVersionIndex = sanitizeGameVersionInput();
+    static constexpr array pickupNormalPtNames{ to_array<string_view>({ "Potion", "Antidote", "Super Potion", "Great Ball",
+                                                                        "Repel", "Escape Rope", "Full Heal", "Hyper Potion",
+                                                                        "Ultra Ball", "Revive", "Rare Candy", "Dusk Stone",
+                                                                        "Shiny Stone", "Dawn Stone", "Full Restore",
+                                                                        "Max Revive", "PP Up", "Max Elixir"}) };
 
-    static constexpr array<string_view, 11> pickupRareTable{ "Hyper Potion", "Nugget", "King's Rock",
-                                                             "Full Restore", "Ether", "Iron Ball", "TM56",
-                                                             "Elixir", "TM86", "Leftovers", "TM26" };
+    static constexpr array pickupRarePtNames{ to_array<string_view>({ "Hyper Potion", "Nugget", "King's Rock",
+                                                                      "Full Restore", "Ether", "White Herb", "TM44",
+                                                                      "Elixir", "TM01", "Leftovers", "TM26"}) };
+
+    static constexpr array pickupNormalHGSSNames{ to_array<string_view>({ "Potion", "Antidote", "Super Potion", "Great Ball",
+                                                                          "Repel", "Escape Rope", "Full Heal", "Hyper Potion",
+                                                                          "Ultra Ball", "Revive", "Rare Candy", "Sun Stone",
+                                                                          "Moon Stone", "Heart Scale", "Full Restore",
+                                                                          "Max Revive", "PP Up", "Max Elixir"}) };
+
+    static constexpr array pickupRareHGSSNames{ to_array<string_view>({ "Hyper Potion", "Nugget", "King's Rock",
+                                                                        "Full Restore", "Ether", "Iron Ball", "TM56",
+                                                                        "Elixir", "TM86", "Leftovers", "TM26"}) };
+
+    using strview_span = span<const string_view>;
+
+    static constexpr array pickupNames{ to_array<strview_span>({
+        strview_span(pickupNormalPtNames),
+        strview_span(pickupRarePtNames),
+        strview_span(pickupNormalHGSSNames),
+        strview_span(pickupRareHGSSNames)
+    }) };
 
     printf("Pickup level %d - %d items:\n\n", ((level == 100 ? 99 : level) / 10) * 10 + 1, ((level == 100 ? 99 : level) / 10) * 10 + 10);
 
     for (short i = 0; i < 11; i++) {
         if (i < 9) {
-            cout << i + 1 << " " << pickupNormalTable[((level - 1) / 10) + i] << "\n";
+            cout << i + 1 << " " << pickupNames[gameVersionIndex - 1][((level - 1) / 10) + i] << "\n";
             continue;
         }
 
-        cout << i + 1 << " " << pickupRareTable[((level - 1) / 10) + (10 - i)] << "\n";
+        cout << i + 1 << " " << pickupNames[gameVersionIndex][((level - 1) / 10) + (10 - i)] << "\n";
     }
 
     cout << "\n\n";
