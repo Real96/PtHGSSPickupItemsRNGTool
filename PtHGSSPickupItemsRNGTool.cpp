@@ -62,8 +62,8 @@ void printItemsNames(const short level, const short game) {
                                                                         "Max Revive", "PP Up", "Max Elixir"}) };
 
     static constexpr array pickupRarePtNames{ to_array<string_view>({ "Hyper Potion", "Nugget", "King's Rock",
-                                                                      "Full Restore", "Ether", "White Herb", "TM44",
-                                                                      "Elixir", "TM01", "Leftovers", "TM26"}) };
+                                                                      "Full Restore", "Ether", "White Herb", "TM44 (Rest)",
+                                                                      "Elixir", "TM01 (Focus Punch)", "Leftovers", "TM26 (Earthquake)"}) };
 
     static constexpr array pickupNormalHGSSNames{ to_array<string_view>({ "Potion", "Antidote", "Super Potion", "Great Ball",
                                                                           "Repel", "Escape Rope", "Full Heal", "Hyper Potion",
@@ -72,8 +72,8 @@ void printItemsNames(const short level, const short game) {
                                                                           "Max Revive", "PP Up", "Max Elixir"}) };
 
     static constexpr array pickupRareHGSSNames{ to_array<string_view>({ "Hyper Potion", "Nugget", "King's Rock",
-                                                                        "Full Restore", "Ether", "Iron Ball", "TM56",
-                                                                        "Elixir", "TM86", "Leftovers", "TM26"}) };
+                                                                        "Full Restore", "Ether", "Iron Ball", "TM56 (Fling)",
+                                                                        "Elixir", "TM86 (Grass Knot)", "Leftovers", "TM26 (Earthquake)"}) };
 
     using strview_span = span<const string_view>;
 
