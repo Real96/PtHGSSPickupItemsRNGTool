@@ -1,6 +1,8 @@
-# PtHGSSPickupItemsRNGTool
+# PtHGSSPickupItemsRNGTool<img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/52.png" title="Meowth" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/190.png" title="Aipom" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/216.png" title="Teddiursa" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/231.png" title="Phanpy" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/263.png" title="Zigzagoon" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/264.png" title="Linoone" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/417.png" title="Pachirisu" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/424.png" title="Ambipom" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/446.png" title="Munchlax" width="60">
+
 This tool will let you RNG abuse pickup items in PtHGSS games
 
+# Pickup item tables
 <img src="https://github.com/Real96/DPPtHoneyTreeRNGTool/assets/20956021/a5509f23-652f-4433-90f8-d97b7881802b" title="Pt" width="40">
 <table>
   <tr align="center">
