@@ -44,18 +44,17 @@ void getLeadMoveRateInput(short &moveRate) {
 
 void getPickupLevelInput(short &level) {
     sanitizeInput<short>("Insert the level of the Pickup Pokemon: ", level, 1, 100);
+    cout << "\n\n";
 }
 
 short sanitizeGameVersionInput() {
     short gameVersion;
     sanitizeInput<short>("Pt (1) or HGSS (2)? ", gameVersion, 1, 2);
-    cout << "\n\n";
 
     return gameVersion == 2 ? 3 : 1;
 }
 
-void printItemsNames(const short level) {
-    const short gameVersionIndex = sanitizeGameVersionInput();
+void printItemsNames(const short level, const short game) {
     static constexpr array pickupNormalPtNames{ to_array<string_view>({ "Potion", "Antidote", "Super Potion", "Great Ball",
                                                                         "Repel", "Escape Rope", "Full Heal", "Hyper Potion",
                                                                         "Ultra Ball", "Revive", "Rare Candy", "Dusk Stone",
@@ -89,11 +88,11 @@ void printItemsNames(const short level) {
 
     for (short i = 0; i < 11; i++) {
         if (i < 9) {
-            cout << i + 1 << " " << pickupNames[gameVersionIndex - 1][((level - 1) / 10) + i] << "\n";
+            cout << i + 1 << " " << pickupNames[game - 1][((level - 1) / 10) + i] << "\n";
             continue;
         }
 
-        cout << i + 1 << " " << pickupNames[gameVersionIndex][((level - 1) / 10) + (10 - i)] << "\n";
+        cout << i + 1 << " " << pickupNames[game][((level - 1) / 10) + (10 - i)] << "\n";
     }
 
     cout << "\n\n";
@@ -224,13 +223,14 @@ int main() {
     unsigned long currentAdvances, advances;
 
     while (true) {
+        const short gameVersionIndex = sanitizeGameVersionInput();
         getPickupsNumberInput(pickupsNumber);
         getLeadMoveRateInput(leadMoveRate);
         array<short, 6> pickupItemIndexes{ 0, 0, 0, 0, 0, 0 };
         array<short, 6> pickupMinItemIndexes{ 0, 0, 0, 0, 0, 0 };
-        static array<string_view, 4> suffixes { "st", "nd", "rd", "th" };
 
         for (short i = 0; i < pickupsNumber; i++) {
+            static array<string_view, 4> suffixes { "st", "nd", "rd", "th" };
             cout << "\n" << i + 1 << suffixes[(i + 1 > 0 && i + 1 <= 3) ? i : 3] << " Pickup:\n";
 
             if (getSpecificSlotsFlag()) {
@@ -239,7 +239,7 @@ int main() {
             }
             else if (getSpecificItemFlag()) {
                 getPickupLevelInput(pickupLevel);
-                printItemsNames(pickupLevel);
+                printItemsNames(pickupLevel, gameVersionIndex);
                 pickupItemIndexes[i] = getItemInput();
             }
         }
