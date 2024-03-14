@@ -351,3 +351,8 @@ This tool will let you RNG abuse pickup items in PtHGSS games
     <td>11</td>
   </tr>
 </table>
+
+## Compiling
+```
+g++ PtHGSSPickupItemsRNGTool.cpp -o PtHGSSPickupItemsRNGTool.exe -std=c++20 --static
+```
