@@ -1,9 +1,9 @@
-# PtHGSSPickupItemsRNGTool<img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/52.png" title="Meowth" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/190.png" title="Aipom" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/216.png" title="Teddiursa" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/231.png" title="Phanpy" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/263.png" title="Zigzagoon" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/264.png" title="Linoone" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/417.png" title="Pachirisu" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/424.png" title="Ambipom" width="60"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/446.png" title="Munchlax" width="60">
+# PtHGSSPickupItemsRNGTool<img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/52.png" title="Meowth" width="45"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/190.png" title="Aipom" width="45"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/216.png" title="Teddiursa" width="45"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/231.png" title="Phanpy" width="45"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/263.png" title="Zigzagoon" width="45"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/264.png" title="Linoone" width="45"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/417.png" title="Pachirisu" width="45"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/424.png" title="Ambipom" width="45"><img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-viii/icons/446.png" title="Munchlax" width="45">
 
 This tool will let you RNG abuse pickup items in PtHGSS games
 
 # Pickup item tables
-<img src="https://github.com/Real96/DPPtHoneyTreeRNGTool/assets/20956021/a5509f23-652f-4433-90f8-d97b7881802b" title="Pt" width="40">
+<img src="https://github.com/Real96/DPPtHoneyTreeRNGTool/assets/20956021/a5509f23-652f-4433-90f8-d97b7881802b" title="Pt" width="45">
 <table>
   <tr align="center">
     <td>
@@ -178,8 +178,8 @@ This tool will let you RNG abuse pickup items in PtHGSS games
   </tr>
 </table>
 
-<img src="https://github.com/Real96/HGSSRockSmashItemsRNGTool/assets/20956021/73eef51d-77e2-454e-a8ee-db7f962f74fb" title="HG" width="40">
-<img src="https://github.com/Real96/HGSSRockSmashItemsRNGTool/assets/20956021/5dc9d411-cc38-494e-b8d6-fdca647424d5" title="SS" width="40">
+<img src="https://github.com/Real96/HGSSRockSmashItemsRNGTool/assets/20956021/73eef51d-77e2-454e-a8ee-db7f962f74fb" title="HG" width="45">
+<img src="https://github.com/Real96/HGSSRockSmashItemsRNGTool/assets/20956021/5dc9d411-cc38-494e-b8d6-fdca647424d5" title="SS" width="45">
 <table>
   <tr align="center">
     <td>
