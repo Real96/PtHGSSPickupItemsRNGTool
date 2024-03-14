@@ -49,7 +49,7 @@ void getPickupLevelInput(short &level) {
 
 short sanitizeGameVersionInput() {
     short gameVersion;
-    sanitizeInput<short>("Pt (1) or HGSS (2)? ", gameVersion, 1, 2);
+    sanitizeInput<short>("Is the game version Pt (1) or HGSS (2)? ", gameVersion, 1, 2);
 
     return gameVersion == 2 ? 3 : 1;
 }
